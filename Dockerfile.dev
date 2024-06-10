@@ -1,0 +1,16 @@
+ARG NODE_VERSION=20.14.0
+FROM node:${NODE_VERSION}-alpine as base
+
+WORKDIR /backend
+COPY package.json ./
+RUN npm install
+COPY ./ ./
+RUN npm run build
+
+ENV NODE_ENV=development
+ENV HOST 0.0.0.0
+ENV PORT 3001
+EXPOSE 3001
+
+CMD ["npm", "run", "preview"]
+
