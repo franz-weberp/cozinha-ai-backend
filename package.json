@@ -1,4 +1,5 @@
 {
+  "type": "module",
   "private": true,
   "scripts": {
     "build": "nitro build",
@@ -7,6 +8,11 @@
     "preview": "node .output/server/index.mjs"
   },
   "devDependencies": {
-    "nitropack": "latest"
+    "nitropack": "latest",
+    "typescript": "^5.4.5"
+  },
+  "dependencies": {
+    "amqplib": "^0.10.4",
+    "protobuf-helper": "git+https://github.com/franz-weberp/protobuf-helper.git#v0.0.1"
   }
 }
